@@ -5,7 +5,6 @@ import java.applet.*;
 public class my_grid extends Applet
 implements MouseWheelListener
 {
-  // main class
   int originX = 0;
   int originY = 0;
   int delta   = 50;
@@ -72,7 +71,7 @@ implements MouseWheelListener
         {
             G.drawString(String.valueOf(-1 * xCoord), originX+10, i + 15);
         }
-        xCoord++;
+        xCoord--;
     }
 
     Color c = new Color(0,153,0);
@@ -82,7 +81,10 @@ implements MouseWheelListener
     G.drawLine(originX,originY*2-getHeight(),originX,originY*2+getHeight());
     G.drawLine(originX*2-getWidth(),originY,originX*2+getWidth(),originY);
     G.setColor(Color.BLUE);
-    G.fillOval(originX-delta/2,originY-delta/2,delta,delta);
+    G.fillOval(originX-delta/4,originY-delta/4,delta/2,delta/2);
+    G.setColor(Color.black);
+    if(delta!=10)
+        G.drawString("(0,0)",originX+delta/4,originY+delta/4);
   }
 
   public void paint(Graphics G)
