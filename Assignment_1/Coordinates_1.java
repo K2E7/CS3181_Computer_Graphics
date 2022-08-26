@@ -1,3 +1,4 @@
+
 import java.applet.*;
 import java.awt.*;
 
@@ -18,6 +19,10 @@ public class Coordinates_1 extends Applet
 
     public void paint(Graphics g)
     {
+
+        originX = (getX()+getWidth())/2;
+        originY = (getY()+getHeight())/2;
+        
         g.setColor(Color.green);
         g.drawLine(originX-1000,originY,originX+1000,originY);
         g.drawLine(originX,originY-1000,originX,originY+1000);
